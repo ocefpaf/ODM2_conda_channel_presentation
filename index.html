@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>The ODM2 Conda Channel</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #2a211c; color: #bdae9d; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #2a211c; color: #bdae9d; border-right: 1px solid #bdae9d; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #bdae9d; background-color: #2a211c; }
+code > span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code > span.dt { text-decoration: underline; } /* DataType */
+code > span.dv { color: #44aa43; } /* DecVal */
+code > span.bn { color: #44aa43; } /* BaseN */
+code > span.fl { color: #44aa43; } /* Float */
+code > span.ch { color: #049b0a; } /* Char */
+code > span.st { color: #049b0a; } /* String */
+code > span.co { color: #0066ff; font-style: italic; } /* Comment */
+code > span.al { color: #ffff00; } /* Alert */
+code > span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code > span.er { color: #ffff00; font-weight: bold; } /* Error */
+code > span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #049b0a; } /* SpecialChar */
+code > span.vs { color: #049b0a; } /* VerbatimString */
+code > span.ss { color: #049b0a; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { font-weight: bold; } /* Preprocessor */
+code > span.at { } /* Attribute */
+code > span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code > span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code > span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="slides.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">The ODM2 Conda Channel</h1>
+  <h3 class="date">April 29th</h3>
+</section>
+
+<section id="who-am-i" class="slide level1">
+<h1>Who am I?</h1>
+<ul>
+<li><a href="https://github.com/ocefpaf">Filipe Fernandes</a></li>
+<li>Involved in the <a href="https://github.com/ioos/conda-recipes/wiki">IOOS conda channel</a></li>
+<li>Now deeply involved in the <a href="https://conda-forge.github.io/">conda-forge</a> community channel</li>
+</ul>
+<div class="fragment">
+<p>See http://wesmckinney.com/blog/conda-forge-centos-moment/ for more on conda-forge</p>
+</div>
+</section>
+<section id="what-is-a-conda-channel" class="slide level1">
+<h1>What is a Conda Channel?</h1>
+<ul>
+<li class="fragment">Is similar to a Linux repository (or app store)</li>
+<li class="fragment">The service is hosted for free at Continuum's Anaconda Cloud</li>
+<li class="fragment">We can upload pre-compiled binaries using the <code>conda</code> package manager</li>
+</ul>
+</section>
+<section id="what-is-a-conda" class="slide level1">
+<h1>What is a conda?</h1>
+<ul>
+<li class="fragment">From their own webpage:</li>
+<li class="fragment">&quot;Package Everything!&quot;</li>
+<li class="fragment">&quot;And share your repositories with clients or colleagues.&quot;</li>
+</ul>
+</section>
+<section id="why-use-conda" class="slide level1">
+<h1>Why use conda?</h1>
+<ul>
+<li class="fragment">Version dependency solving (e.g.: geoalchemy-odm2 fork)</li>
+<li class="fragment">Reproducible environments are easy to create</li>
+<li class="fragment">One recipe for multiple platforms (no <code>apt-get</code>, <code>yum</code>, <code>brew</code>, etc)</li>
+</ul>
+<div class="fragment">
+<p>http://technicaldiscovery.blogspot.com.br/2013/12/why-i-promote-conda.html</p>
+</div>
+</section>
+<section id="the-odm2-channel" class="slide level1">
+<h1>The ODM2 Channel</h1>
+<ul>
+<li class="fragment">10 packages compiled for Python 2 and 3 (when possible)</li>
+<li class="fragment">Available platforms are Linux-64, Windows-32/64, and OS X</li>
+<li class="fragment">You can install with <code>conda install -c ODM2 odm2api</code></li>
+</ul>
+</section>
+<section id="how-to-use-the-channel" class="slide level1">
+<h1>How to use the channel?</h1>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">conda</span> config --add channels ODM2
+
+<span class="kw">curl</span> -L http://bit.ly/ODM2-env -o environment.yml
+
+<span class="kw">conda</span> env create environment.yml</code></pre></div>
+<div class="fragment">
+<p>That is it!</p>
+</div>
+</section>
+<section id="odm2-environment-file" class="slide level1">
+<h1>ODM2 environment file</h1>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">name:</span> ODM2
+<span class="fu">channels:</span>
+    <span class="kw">-</span> ODM2
+<span class="fu">dependencies:</span>
+    <span class="kw">-</span> python=2.7
+    <span class="kw">-</span> odm2api
+    <span class="kw">-</span> wofpy
+    <span class="kw">-</span> jupyter
+    <span class="kw">-</span> matplotlib</code></pre></div>
+</section>
+<section id="how-is-the-channel-populated" class="slide level1">
+<h1>How is the channel populated?</h1>
+<ul>
+<li class="fragment">The recipes are hosted on <a href="https://github.com/ODM2/conda-recipes-ODM2">GitHub</a></li>
+<li class="fragment"><a href="http://www.appveyor.com/">AppVeyor</a> ➛ Windows</li>
+<li class="fragment"><a href="https://travis-ci.org/">Travis-CI</a> ➛ OSX</li>
+<li class="fragment"><a href="https://registry.hub.docker.com/u/ocefpaf/centos64-conda-obvious-ci/">CircleCI+Docker</a> ➛ Linux</li>
+</ul>
+</section>
+<section id="issues" class="slide level1">
+<h1>Issues</h1>
+<figure>
+<img src="images/github_issues.png" />
+</figure>
+</section>
+<section id="prs" class="slide level1">
+<h1>PRs</h1>
+<figure>
+<img src="images/github_pr.png" />
+</figure>
+</section>
+<section id="how-to-contribute" class="slide level1">
+<h1>How to contribute?</h1>
+<ul>
+<li class="fragment">Report problems</li>
+<li class="fragment">Request packages or new releases</li>
+<li class="fragment">Send PRs adding/fixing packages</li>
+</ul>
+<div class="fragment">
+<pre><code>https://github.com/ODM2/conda-recipes-ODM2/issues</code></pre>
+</div>
+</section>
+<section id="submitting-a-recipe" class="slide level1">
+<h1>Submitting a recipe</h1>
+<ul>
+<li class="fragment">Fork https://github.com/ODM2/conda-recipes-ODM2</li>
+<li class="fragment">Add the recipe directory (for more info see the conda <a href="http://conda.pydata.org/docs/building/recipe.html">docs</a>)</li>
+<li class="fragment">Submit the PR</li>
+<li class="fragment">The recipe will be built and, if merged, uploaded to the channel</li>
+</ul>
+</section>
+<section id="creating-a-recipe" class="slide level1">
+<h1>Creating a <a href="https://github.com/ODM2/conda-recipes-ODM2/blob/master/odm2api/meta.yaml">recipe</a></h1>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="kw">{</span>% set version = &quot;1.0&quot; %<span class="kw">}</span>
+
+<span class="fu">package:</span>
+  <span class="fu">name:</span> example
+  <span class="fu">version:</span> <span class="kw">{</span>{ version <span class="kw">}</span>}
+
+<span class="fu">source:</span>
+  <span class="fu">fn:</span> example-{{ version }}.tar.gz
+  <span class="fu">url:</span> https://pypi.python.org/example-{{ version }}.tar.gz
+  <span class="fu">md5:</span> 842b44f8c95517ed5b792081a2370da1
+  <span class="fu">patches:</span>
+    <span class="kw">-</span> some.patch
+
+<span class="fu">build:</span>
+  <span class="fu">number:</span> 0
+  <span class="fu">script:</span> script: python -m pip install --no-deps .
+
+<span class="fu">requirements:</span>
+  <span class="fu">build:</span>
+    <span class="kw">-</span> python
+    <span class="kw">-</span> pip
+  <span class="fu">run:</span>
+    <span class="kw">-</span> python
+
+<span class="fu">test:</span>
+  <span class="fu">imports:</span>
+    <span class="kw">-</span> example
+  <span class="fu">commands:</span>
+    <span class="kw">-</span> example --version
+
+<span class="fu">about:</span>
+  <span class="fu">home:</span> https://example.com/examples/
+  <span class="fu">license:</span> BSD 3-Clause
+  <span class="fu">summary:</span> An example package
+
+<span class="fu">extra:</span>
+  <span class="fu">recipe-maintainers:</span>
+    <span class="kw">-</span> GitHubHandle</code></pre></div>
+</section>
+<section id="the-truth-about-creating-a-recipe" class="slide level1">
+<h1>The truth about creating a recipe</h1>
+<ul>
+<li class="fragment"><code>conda skeleton pypi psycopg2</code></li>
+<li class="fragment"><a href="http://anaconda.org/search?q=ODM2api">Search</a>, download, copy, and paste</li>
+<li class="fragment">Fetch directly from known and trusted <a href="https://github.com/ocefpaf/conda-recipes-ODM2/tree/master/shapely">sources</a></li>
+</ul>
+<div class="fragment">
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="co"># Placeholder meta, the canonical one comes from source.txt</span>
+
+<span class="fu">package:</span>
+   <span class="fu">name:</span> shapely
+
+<span class="fu">build:</span>
+   <span class="fu">script:</span> exit 1</code></pre></div>
+<pre class="text"><code>gh-repo: conda-forge/shapely-feedstock
+git-tag: master
+contents: recipe/*</code></pre>
+</div>
+</section>
+<section id="maintaining-recipes" class="slide level1">
+<h1>Maintaining recipes</h1>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="kw">{</span>% set version = &quot;1.0&quot; %<span class="kw">}</span>
+
+<span class="fu">package:</span>
+  <span class="fu">name:</span> example
+  <span class="fu">version:</span> <span class="kw">{</span>{ version <span class="kw">}</span>}
+
+<span class="fu">source:</span>
+  <span class="fu">fn:</span> example-{{ version }}.tar.gz
+  <span class="fu">url:</span> https://pypi.python.org/example-{{ version }}.tar.gz
+  <span class="fu">md5:</span> 842b44f8c95517ed5b792081a2370da1
+  <span class="fu">patches:</span>
+    <span class="kw">-</span> some.patch
+
+<span class="fu">build:</span>
+  <span class="fu">number:</span> 0
+  .
+  .
+  .</code></pre></div>
+</section>
+<section id="maintenance-example" class="slide level1">
+<h1>Maintenance example</h1>
+<figure>
+<img src="images/github_maintaince.png" />
+</figure>
+</section>
+<section id="the-conda-recipes-odm2-repository" class="slide level1">
+<h1>The conda-recipes-ODM2 repository</h1>
+<p>Let's try to answer: - What's needed in the repo to be ready for packaging - The multi-OS support - The role of the Continuous Integration (CI)</p>
+<p>https://github.com/ODM2/conda-recipes-ODM2</p>
+</section>
+<section id="questions" class="slide level1">
+<h1>Questions?</h1>
+<figure>
+<img src="http://imgs.xkcd.com/comics/tools.png" alt="http://xkcd.com/1629/" /><figcaption>http://xkcd.com/1629/</figcaption>
+</figure>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

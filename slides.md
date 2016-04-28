@@ -82,11 +82,11 @@ dependencies:
 
 # Issues
 
-![](images/github_issues.png)
+![https://github.com/ODM2/ODM2PythonAPI/issues/63](images/github_issues.png)
 
 # PRs
 
-![](images/github_pr.png)
+![https://github.com/ODM2/conda-recipes-ODM2/pull/32](images/github_pr.png)
 
 # How to contribute?
 
@@ -148,13 +148,13 @@ extra:
 
 ```
 
-# The truth about creating a recipe
+# The truth about creating recipes
 
 > - `conda skeleton pypi psycopg2`
 > - [Search](http://anaconda.org/search?q=ODM2api), download, copy, and paste
 > - Fetch directly from known and trusted [sources](https://github.com/ocefpaf/conda-recipes-ODM2/tree/master/shapely)
 
-. . .
+# Getting recipes from conda-forge
 
 ```yaml
 # Placeholder meta, the canonical one comes from source.txt
@@ -196,7 +196,7 @@ build:
 ```
 # Maintenance example
 
-![](images/github_maintaince.png)
+![https://github.com/ODM2/conda-recipes-ODM2/pull/32/files](images/github_maintaince.png)
 
 # The conda-recipes-ODM2 repository
 

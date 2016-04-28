@@ -220,14 +220,16 @@ code > span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Inf
   <span class="fu">recipe-maintainers:</span>
     <span class="kw">-</span> GitHubHandle</code></pre></div>
 </section>
-<section id="the-truth-about-creating-a-recipe" class="slide level1">
-<h1>The truth about creating a recipe</h1>
+<section id="the-truth-about-creating-recipes" class="slide level1">
+<h1>The truth about creating recipes</h1>
 <ul>
 <li class="fragment"><code>conda skeleton pypi psycopg2</code></li>
 <li class="fragment"><a href="http://anaconda.org/search?q=ODM2api">Search</a>, download, copy, and paste</li>
 <li class="fragment">Fetch directly from known and trusted <a href="https://github.com/ocefpaf/conda-recipes-ODM2/tree/master/shapely">sources</a></li>
 </ul>
-<div class="fragment">
+</section>
+<section id="getting-recipes-from-conda-forge" class="slide level1">
+<h1>Getting recipes from conda-forge</h1>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="co"># Placeholder meta, the canonical one comes from source.txt</span>
 
 <span class="fu">package:</span>
@@ -238,7 +240,6 @@ code > span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Inf
 <pre class="text"><code>gh-repo: conda-forge/shapely-feedstock
 git-tag: master
 contents: recipe/*</code></pre>
-</div>
 </section>
 <section id="maintaining-recipes" class="slide level1">
 <h1>Maintaining recipes</h1>

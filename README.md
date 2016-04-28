@@ -3,7 +3,7 @@
 
 Rendered versions:
 
-http://ocefpaf.github.io/ODM2_conda_presentation/index.html
+http://ocefpaf.github.io/ODM2_conda_channel_presentation/
 
 Use the Makefile to create and manage the slides:
 

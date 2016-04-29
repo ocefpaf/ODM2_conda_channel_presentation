@@ -12,7 +12,7 @@
 
 . . .
 
-See http://wesmckinney.com/blog/conda-forge-centos-moment/ for more on conda-forge
+See [http://wesmckinney.com/blog/conda-forge-centos-moment](http://wesmckinney.com/blog/conda-forge-centos-moment) for more on conda-forge
 
 
 # What is a Conda Channel?
@@ -35,7 +35,7 @@ See http://wesmckinney.com/blog/conda-forge-centos-moment/ for more on conda-for
 
 . . .
 
-http://technicaldiscovery.blogspot.com.br/2013/12/why-i-promote-conda.html
+[http://technicaldiscovery.blogspot.com.br/2013/12/why-i-promote-conda.html](http://technicaldiscovery.blogspot.com.br/2013/12/why-i-promote-conda.html)
 
 # The ODM2 Channel
 
@@ -82,11 +82,14 @@ dependencies:
 
 # Issues
 
-![https://github.com/ODM2/ODM2PythonAPI/issues/63](images/github_issues.png)
+![](images/github_issues.png)
+
+[https://github.com/ODM2/ODM2PythonAPI/issues/63](https://github.com/ODM2/ODM2PythonAPI/issues/63)
 
 # PRs
 
-![https://github.com/ODM2/conda-recipes-ODM2/pull/32](images/github_pr.png)
+![](images/github_pr.png)
+[https://github.com/ODM2/conda-recipes-ODM2/pull/32](https://github.com/ODM2/conda-recipes-ODM2/pull/32)
 
 # How to contribute?
 
@@ -96,11 +99,11 @@ dependencies:
 
 . . .
 
-    https://github.com/ODM2/conda-recipes-ODM2/issues
+[https://github.com/ODM2/conda-recipes-ODM2/issues](https://github.com/ODM2/conda-recipes-ODM2/issues)
 
 # Submitting a recipe
 
-> - Fork https://github.com/ODM2/conda-recipes-ODM2
+> - Fork [https://github.com/ODM2/conda-recipes-ODM2](https://github.com/ODM2/conda-recipes-ODM2)
 > - Add the recipe directory (for more info see the conda [docs](http://conda.pydata.org/docs/building/recipe.html))
 > - Submit the PR
 > - The recipe will be built and, if merged, uploaded to the channel
@@ -196,7 +199,9 @@ build:
 ```
 # Maintenance example
 
-![https://github.com/ODM2/conda-recipes-ODM2/pull/32/files](images/github_maintaince.png)
+![](images/github_maintaince.png)
+
+[https://github.com/ODM2/conda-recipes-ODM2/pull/32/files](https://github.com/ODM2/conda-recipes-ODM2/pull/32/files)
 
 # The conda-recipes-ODM2 repository
 
@@ -205,8 +210,10 @@ Let's try to answer:
     - The multi-OS support
     - The role of the Continuous Integration (CI)
 
-https://github.com/ODM2/conda-recipes-ODM2
+[https://github.com/ODM2/conda-recipes-ODM2](https://github.com/ODM2/conda-recipes-ODM2)
 
 # Questions?
 
-![http://xkcd.com/1629/](http://imgs.xkcd.com/comics/tools.png)
+![](http://imgs.xkcd.com/comics/tools.png)
+
+[http://xkcd.com/1629/](http://xkcd.com/1629/)
